@@ -1,0 +1,1 @@
+<p class="text-center">Copyright Gabriel - All Righs Reserve</p>
