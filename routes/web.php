@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'PagesController@getIndex')->name('pages.welcome');
-
 Route::get('/about', 'PagesController@getAbout')->name('pages.about');
-
 Route::get('/contact', 'PagesController@getContact')->name('pages.contact');
+Route::resource('posts', 'PostsController');
