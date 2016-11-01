@@ -12,7 +12,6 @@
 */
 
 
-
 Route::group(['middleware' => ['web']], function() {
     Route::get('/', 'PagesController@getIndex')->name('pages.welcome');
     Route::get('/about', 'PagesController@getAbout')->name('pages.about');

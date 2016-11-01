@@ -17,7 +17,7 @@ class PostsController extends Controller
     public function index()
     {
         // create a variable and store all the blog posts in it from the database.
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'desc')->paginate(10);
 
         //return a view and pass in the above variable.
         return view('posts.index')->withPosts($posts);
@@ -127,6 +127,10 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->delete();
+
+        return redirect()->route('posts.index');
     }
 }
