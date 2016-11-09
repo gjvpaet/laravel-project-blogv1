@@ -9,6 +9,13 @@ use Blog\Post;
 
 class BlogsController extends Controller
 {
+    public function getIndex()
+    {
+        $posts = Post::orderBy('id', 'desc')->paginate(10);
+
+        return view('blog.index')->withPosts($posts);
+    }
+
     public function getSingle($slug)
     {
         // fetch from the database based on slug
